@@ -1,3 +1,3 @@
-function value=get_x_high(xk,uk)
-   value=2*xk-3*uk;
+function value=get_x_high(xk,uk,T)
+   value=xk+T*(uk-xk);
 end

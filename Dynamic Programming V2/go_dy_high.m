@@ -3,15 +3,15 @@ close all
 clc
 
 N=3;
-T=0.5;
-
-xk=0:T:10;
-uk=-10:T:10;
+T=0.1;
 
 
+xk=-20:T:10;
+uk=-3:T:4;
 
-state_index=9;
-current_state=xk(state_index);
+
+current_state=3;
+state_index=find(xk==current_state,1);
 
 final_states=[];
 
@@ -21,7 +21,7 @@ JNN_A(:,N)=JNN';
 for k=N-1:-1:1
    for i=1:length(xk)
        for j=1:length(uk)
-        SumXU(j)=get_x_high(xk(i),uk(j));
+        SumXU(j)=get_x_high(xk(i),uk(j),T);
        end
         Joptim=search_values(xk,SumXU,JNN_A(:,k+1)');
        
