@@ -19,8 +19,8 @@ N=length(t);
 u=ones(N,1);
 
 
-while(norm(systemNormFunc(u))>0.01)
-       u=u-0.01*systemNormFunc(u)/norm(systemNormFunc(u));
+while(norm(systemNormFunc(u))>0.1)
+       u=u-0.1*systemNormFunc(u)/norm(systemNormFunc(u));
        norm(systemNormFunc(u))
 end
 

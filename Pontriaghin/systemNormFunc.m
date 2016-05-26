@@ -7,7 +7,7 @@ for k=1:N-1
     xs=[xs;x];
 end
 
-l=[0];
+l=[(x(end)-10)^2];
 ls=l;
 
 for k=1:N-1
@@ -16,9 +16,9 @@ for k=1:N-1
 end
 
 
-%H=u.^2+xs.^2+ls.*(-a*xs+b*u);
+H=u.^2+xs.^2+ls.*(-a*xs+b*u);
 
-H=u.^2+ls.*(-a*xs+b*u);
+%H=u.^2+ls.*(-a*xs+b*u);
 
 normH=2*u+b*ls;
 
